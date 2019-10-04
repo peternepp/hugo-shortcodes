@@ -1,0 +1,15 @@
+{{ $iconClass := .Get "iconClass" | safeHTMLAttr }}
+{{ $linkClass := .Get "linkClass" | safeHTMLAttr }}
+{{ $link := .Get "link" }}
+{{ $addStyle := .Get "style" | safeCSS }}
+
+{{ with $link}}
+<a href="{{ . }}" class="{{ $linkClass }}" target="_blank">
+  <i class="{{ $iconClass }}" title="{{ $linkClass }}" style="{{ $addStyle }}"></i>
+  <span class="screen-reader-text">{{ $linkClass }}</span>
+</a>
+{{ end }}
+
+{{ if not $link }}
+<i class="{{ $iconClass }}" title="{{ $linkClass }}" style="{{ $addStyle }}"></i>
+{{ end }}
