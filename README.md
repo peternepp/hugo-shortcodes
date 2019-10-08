@@ -26,3 +26,28 @@ The shortcode is using several parameter:
 {{<icon iconClass="fas fa-envelope fa-3x" linkClass="email" style="margin-right: 50px;" link="mailto://">}}
 ```
 
+## img.html
+
+Supports featherlight box and Hugo's image processing features. Featherlight must be available with your site/theme.
+
+### Usage
+
+The shortcode is using several parameter:
+
+* src - String, image URL.
+* cmd - String, "COMMAND OPTION" Command must be either "Fill", "Resize" or "Fit" with appropriate options, see [Image Processing Methods](https://gohugo.io/content-management/image-processing/#image-processing-methods).
+* box - Bool, Use "true" if featherlight box should be used.
+
+### Examples
+
+```
+{{<img src="image.jpg" box="true" command="Resize 800x" >}}
+```
+
+```
+{{<img src="image.jpg" command="Fill 800x640 Center" >}}
+```
+
+### ToDo
+
+- [ ] Support for filters supported since Hugo 0.58
